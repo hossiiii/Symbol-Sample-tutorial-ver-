@@ -10,7 +10,6 @@ import {
 
 const property = require('./Property.ts');
 const accountPrivateKey = property.accountPrivateKey;
-const targetAddress = 'TB5SUCCQIOISBCMTSYLYLGGAA3MIMYNC6KMRAHY';
 const node = 'https://sym-test-04.opening-line.jp:3001';
 const repoFactory = new RepositoryFactoryHttp(node);
 const transactionHttp = repoFactory.createTransactionRepository();
