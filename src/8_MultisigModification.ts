@@ -18,6 +18,9 @@ const listener = repoFactory.createListener();
 
 const property = require('./Property.ts');
 const multisigAccountKey = property.accountPrivateKey;
+const cosigner1Key = property.cosigner1Key;
+const cosigner2Key = property.cosigner2Key;
+const cosigner3Key = property.cosigner3Key;
 
 const main = async () => {
   const networkType = await firstValueFrom(repoFactory.getNetworkType());
@@ -30,9 +33,9 @@ const main = async () => {
     multisigAccountKey,
     networkType
   );
-  const cosigner1 = Account.generateNewAccount(NetworkType.TEST_NET);
-  const cosigner2 = Account.generateNewAccount(NetworkType.TEST_NET);
-  const cosigner3 = Account.generateNewAccount(NetworkType.TEST_NET);
+  const cosigner1 = Account.createFromPrivateKey(cosigner1Key, networkType);
+  const cosigner2 = Account.createFromPrivateKey(cosigner2Key, networkType);
+  const cosigner3 = Account.createFromPrivateKey(cosigner3Key, networkType);
 
   const multisigModificationTransaction =
     MultisigAccountModificationTransaction.create(
@@ -67,15 +70,6 @@ const main = async () => {
     transactionService.announce(signedTransaction, listener).subscribe({
       next: (x) => {
         console.log(x);
-
-        //display cosigner privateKey
-        console.log(
-          `以下のprivateKeyを別ファイルの”Property.ts”に入力して保存する
-        `
-        );
-        console.log(`cosigner1Key: ${cosigner1.privateKey}`);
-        console.log(`cosigner2Key: ${cosigner2.privateKey}`);
-        console.log(`cosigner3Key: ${cosigner3.privateKey}`);
       },
       error: (err) => {
         console.error(err);
