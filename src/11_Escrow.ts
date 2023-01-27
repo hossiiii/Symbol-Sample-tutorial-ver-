@@ -1,3 +1,6 @@
+//cosigner1が起案者となりcosigner1=>cosigner2へ5XYMを、cosigner2=>cosigner1へ1xymを送る取引を行う
+//この時点ではcosigner1のみの署名のためトランザクションはロックされている状態
+
 import { firstValueFrom } from 'rxjs';
 import {
   TransferTransaction,
@@ -14,14 +17,14 @@ import {
   UInt64,
 } from 'symbol-sdk';
 
-const initiatorKey =
-  'C6354623696897D24CAE41E89DAC832E7731DE98D61A1FD58B180CC0009FC4B0';
-const cosignerPublicKey =
-  'A685D5945F0819D2EE38B958C9A07DBD488CEBA9F577AC7ECAB75EEA1AF5F1F5';
+const property = require('./Property.ts');
+const initiatorKey = property.cosigner1Key;
+
 const node = 'https://sym-test-04.opening-line.jp:3001';
 const repoFactory = new RepositoryFactoryHttp(node);
 const transactionHttp = repoFactory.createTransactionRepository();
 const receiptHttp = repoFactory.createReceiptRepository();
+const accountHttp = repoFactory.createAccountRepository();
 const transactionService = new TransactionService(transactionHttp, receiptHttp);
 const listener = repoFactory.createListener();
 
@@ -37,15 +40,21 @@ const main = async () => {
     networkType
   );
 
+  const accountInfo = await accountHttp
+    .getAccountInfo(Address.createFromRawAddress(property.cosigner2Address))
+    .toPromise();
+
+  console.log(accountInfo!.publicKey)
+  
   const cosignerPublicAccount = PublicAccount.createFromPublicKey(
-    cosignerPublicKey,
+    accountInfo!.publicKey,
     networkType
   );
 
   const transferTransaction1 = TransferTransaction.create(
     Deadline.create(epochAdjustment),
     Address.createFromRawAddress(cosignerPublicAccount.address.plain()),
-    [NetworkCurrencies.PUBLIC.currency.createRelative(10)],
+    [NetworkCurrencies.PUBLIC.currency.createRelative(5)],
     EmptyMessage,
     networkType
   );

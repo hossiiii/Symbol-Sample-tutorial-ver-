@@ -13,8 +13,12 @@ const main = () => {
     `
   );
   console.log(
-    `2. CLAIM後、緑色のNotificationとして”View transaction in explorer.”
-    とリンクが表示されるのでクリックし200XYM移動されていることを確認する
+    `2. CLAIM後、緑色のNotificationとして”View transaction in explorer.”と表示されたらタブを閉じ
+    代わりに以下リンクを別タブで開き200XYMが入金されていることを確認する(このページは開いたままにしておく)
+    `
+  );
+  console.log(
+    `https://testnet.symbol.fyi/accounts/${account.address.plain()}
     `
   );
   console.log(
