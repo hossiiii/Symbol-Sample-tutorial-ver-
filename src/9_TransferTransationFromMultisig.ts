@@ -99,6 +99,7 @@ const main = async () => {
         },
         error: (err) => {
           console.error(err);
+          listener.close();
         },
         complete: () => {
           listener.close();
