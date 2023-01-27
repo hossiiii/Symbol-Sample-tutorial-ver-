@@ -1,5 +1,5 @@
-//cosigner1が起案者となりcosigner1=>cosigner2へ5XYMを、cosigner2=>cosigner1へ1xymを送る取引を行う
-//この時点ではcosigner1のみの署名のためトランザクションはロックされている状態
+//cosigner3が起案者となりcosigner3=>cosigner1へ5XYMを、cosigner1=>cosigner3へ1xymを送る取引を行う
+//この時点ではcosigner3のみの署名のためトランザクションはロックされている状態
 
 import { firstValueFrom } from 'rxjs';
 import {
@@ -18,7 +18,7 @@ import {
 } from 'symbol-sdk';
 
 const property = require('./Property.ts');
-const initiatorKey = property.cosigner1Key;
+const initiatorKey = property.cosigner3Key;
 
 const node = 'https://sym-test-04.opening-line.jp:3001';
 const repoFactory = new RepositoryFactoryHttp(node);
@@ -41,11 +41,9 @@ const main = async () => {
   );
 
   const accountInfo = await accountHttp
-    .getAccountInfo(Address.createFromRawAddress(property.cosigner2Address))
+    .getAccountInfo(Address.createFromRawAddress(property.cosigner1Address))
     .toPromise();
 
-  console.log(accountInfo!.publicKey)
-  
   const cosignerPublicAccount = PublicAccount.createFromPublicKey(
     accountInfo!.publicKey,
     networkType
@@ -106,6 +104,12 @@ const main = async () => {
       .subscribe({
         next: (x) => {
           console.log(x);
+          //display targetTxHash
+          console.log(
+            `以下のtargetTxHashを別ファイルの”Property.ts”に入力して保存する
+          `
+          );
+          console.log(x.transactionInfo!.hash);
         },
         error: (err) => {
           console.error(err);

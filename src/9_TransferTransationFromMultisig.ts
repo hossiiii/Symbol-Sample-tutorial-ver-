@@ -1,4 +1,4 @@
-//cosigner1を起案者としてマルチシグアカウント化したaccountからcosigner3に対して10XYMを送信する
+//cosigner1を起案者としてマルチシグアカウント化したaccountからcosigner3に対して20XYMを送信する
 //この時点ではcosigner1のみの署名のためトランザクションはロックされている状態
 
 import { firstValueFrom } from 'rxjs';
@@ -48,7 +48,7 @@ const main = async () => {
   const transferTransaction = TransferTransaction.create(
     Deadline.create(epochAdjustment),
     Address.createFromRawAddress(targetAddress),
-    [NetworkCurrencies.PUBLIC.currency.createRelative(10)],
+    [NetworkCurrencies.PUBLIC.currency.createRelative(20)],
     EmptyMessage,
     networkType
   );

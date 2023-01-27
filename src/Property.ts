@@ -23,3 +23,7 @@ exports.namespaceName = 'kaisanntes'; //あなたの名前をフルネーム小�
 //9_TransferTransationFromMultisig.tsから入力
 exports.targetTxHash =
   '1B978F87FC9DF0CFFA55A358BFB85E29D9B7212824E266D4580217D9DE6EAF41';
+
+//11_Escrow.tsから入力
+exports.targetTxHash =
+  '1B978F87FC9DF0CFFA55A358BFB85E29D9B7212824E266D4580217D9DE6EAF41';
