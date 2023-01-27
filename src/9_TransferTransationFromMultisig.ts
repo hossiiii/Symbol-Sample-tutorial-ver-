@@ -97,6 +97,13 @@ const main = async () => {
       .subscribe({
         next: (x) => {
           console.log(x);
+
+          //display targetTxHash
+          console.log(
+            `以下のtargetTxHashを別ファイルの”Property.ts”に入力して保存する
+          `
+          );
+          console.log(x.transactionInfo!.hash);
         },
         error: (err) => {
           console.error(err);

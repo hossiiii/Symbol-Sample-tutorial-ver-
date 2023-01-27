@@ -19,3 +19,7 @@ exports.cosigner3Address = 'TD4KP6EQADUROWVM53RCI2D3TAMHR5JRMWCL3ZY';
 //2_MosaicCreatetion.tsから入力
 exports.mosaicId = '616CC80D350C75D4';
 exports.namespaceName = 'kaisanntes'; //あなたの名前をフルネーム小文字スペース無しで入力して下さい
+
+//9_TransferTransationFromMultisig.tsから入力
+exports.targetTxHash =
+  '4DF15A81AE8D1A1F012216A796DDAC7F4706EBB9CE7186E6B17D3B8CDEFBBF4C';

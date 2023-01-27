@@ -32,7 +32,7 @@ const main = async () => {
   const transferTransaction = TransferTransaction.create(
     Deadline.create(epochAdjustment),
     Address.createFromRawAddress(targetAddress),
-    [NetworkCurrencies.PUBLIC.currency.createRelative(10)],
+    [NetworkCurrencies.PUBLIC.currency.createRelative(20)],
     EmptyMessage,
     networkType
   ).setMaxFee(100);
