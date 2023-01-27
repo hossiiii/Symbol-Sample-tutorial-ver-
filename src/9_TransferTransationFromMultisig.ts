@@ -18,7 +18,7 @@ const property = require('./Property.ts');
 const multisigAccountPublicKey = property.accountPublicKey;
 const cosignerPrivateKey = property.cosigner1Key;
 
-const targetAddress = 'TB5SUCCQIOISBCMTSYLYLGGAA3MIMYNC6KMRAHY';
+const targetAddress = property.cosigner2Address;
 const node = 'https://sym-test-04.opening-line.jp:3001';
 const repoFactory = new RepositoryFactoryHttp(node);
 const transactionHttp = repoFactory.createTransactionRepository();
