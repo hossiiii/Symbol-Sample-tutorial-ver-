@@ -1,3 +1,5 @@
+//accountでモザイクを発行する
+
 import { firstValueFrom } from 'rxjs';
 import {
   Deadline,

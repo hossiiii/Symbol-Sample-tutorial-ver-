@@ -1,3 +1,5 @@
+//accountにルートネームスペースを割り当てる
+
 import { firstValueFrom } from 'rxjs';
 import {
   Deadline,

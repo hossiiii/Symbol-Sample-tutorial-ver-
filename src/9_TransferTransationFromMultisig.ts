@@ -1,3 +1,6 @@
+//cosigner1を起案者としてマルチシグアカウント化したaccountからcosigner3に対して10XYMを送信する
+//この時点ではcosigner1のみの署名のためトランザクションはロックされている状態
+
 import { firstValueFrom } from 'rxjs';
 import {
   TransferTransaction,
@@ -18,7 +21,7 @@ const property = require('./Property.ts');
 const multisigAccountPublicKey = property.accountPublicKey;
 const cosignerPrivateKey = property.cosigner1Key;
 
-const targetAddress = property.cosigner2Address;
+const targetAddress = property.cosigner3Address;
 const node = 'https://sym-test-04.opening-line.jp:3001';
 const repoFactory = new RepositoryFactoryHttp(node);
 const transactionHttp = repoFactory.createTransactionRepository();
@@ -54,23 +57,12 @@ const main = async () => {
     Deadline.create(epochAdjustment),
     [transferTransaction.toAggregate(multisigPublicAccount)],
     networkType
-  ).setMaxFeeForAggregate(100, 0);
+  ).setMaxFeeForAggregate(100, 2);
 
   const signedTransaction = cosignerAccount.sign(
     aggregateTransaction,
     generationHash
   );
-
-  // const aggregateTransaction = AggregateTransaction.createBonded(
-  //   Deadline.create(epochAdjustment),
-  //   [transferTransaction.toAggregate(multisigPublicAccount)],
-  //   networkType
-  // ).setMaxFeeForAggregate(100, 2);
-
-  // const signedTransaction = cosignerAccount.sign(
-  //   aggregateTransaction,
-  //   generationHash
-  // );
 
   const duration = UInt64.fromUint(2 * 60 * 24 * 2);
 

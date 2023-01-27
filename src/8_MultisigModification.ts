@@ -1,3 +1,5 @@
+//accountをマルチシグアカウント化する（３名中２名が署名することでトランザクションが実行される）。
+
 import { firstValueFrom } from 'rxjs';
 import {
   Deadline,

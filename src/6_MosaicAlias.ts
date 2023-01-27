@@ -1,3 +1,5 @@
+//accountで発行したモザイクにサブネームスペース（.coin）を割り当てる
+
 import { firstValueFrom } from 'rxjs';
 import {
   Deadline,

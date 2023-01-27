@@ -1,3 +1,5 @@
+//accountからネームスペースで宛先（daoka）とモザイク（.coin）を指定して送信する
+
 import { firstValueFrom } from 'rxjs';
 import {
   TransferTransaction,

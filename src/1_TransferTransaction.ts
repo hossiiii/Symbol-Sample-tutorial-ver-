@@ -1,3 +1,5 @@
+//accountからcosigner1へ20XYMを送金する
+
 import { firstValueFrom } from 'rxjs';
 import {
   TransferTransaction,
