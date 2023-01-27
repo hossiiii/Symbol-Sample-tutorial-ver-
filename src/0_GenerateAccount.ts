@@ -20,7 +20,8 @@ const main = () => {
     `
   );
   console.log(`accountPrivateKey: ${account.privateKey}`);
-  console.log(`accountPublicKey: ${account.publicKey}
+  console.log(`accountPublicKey: ${account.publicKey}`);
+  console.log(`accountAddress: ${account.address.plain()}
   `);
   const cosigner1 = Account.generateNewAccount(NetworkType.TEST_NET);
   const cosigner2 = Account.generateNewAccount(NetworkType.TEST_NET);

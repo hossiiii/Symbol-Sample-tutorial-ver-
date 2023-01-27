@@ -27,7 +27,7 @@ const main = async () => {
   const account = Account.createFromPrivateKey(accountPrivateKey, networkType);
 
   const namespaceName = property.namespaceName;
-  const duration = UInt64.fromUint(2 * 60 * 24 * 30);
+  const duration = UInt64.fromUint(2 * 60 * 24 * 30); // 30 day
 
   const namespaceCreatetionTransaction =
     NamespaceRegistrationTransaction.createRootNamespace(
