@@ -17,12 +17,20 @@ const main = () => {
   );
   console.log(
     `3. 以下のPrivate Keyを別ファイルの”Property.ts”に入力して保存する
-    以上で準備は終了
     `
   );
-  console.log(`Private Key: ${account.privateKey}`);
-  console.log(`Public Key: ${account.publicKey}`);
-  console.log(`Address: ${account.address.plain()}`);
+  console.log(`accountPrivateKey: ${account.privateKey}`);
+  console.log(`accountPublicKey: ${account.publicKey}`);
+  console.log(
+    `4. 以下のPrivate Keyを別ファイルの”Property.ts”に入力して保存する
+    `
+  );
+  const cosigner1 = Account.generateNewAccount(NetworkType.TEST_NET);
+  const cosigner2 = Account.generateNewAccount(NetworkType.TEST_NET);
+  const cosigner3 = Account.generateNewAccount(NetworkType.TEST_NET);
+  console.log(`cosigner1Key: ${cosigner1.privateKey}`);
+  console.log(`cosigner2Key: ${cosigner2.privateKey}`);
+  console.log(`cosigner3Key: ${cosigner3.privateKey}`);
 };
 
 main();
