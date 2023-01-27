@@ -5,7 +5,8 @@ import { Account, NetworkType } from 'symbol-sdk';
 const main = () => {
   const account = Account.generateNewAccount(NetworkType.TEST_NET);
   console.log(
-    `1. 以下URLを別タブで開き、CLAIM!ボタンをクリック。アカウントに手数料分の通貨（XYM）を補充する
+    `1. 以下URLを別タブで開き、CLAIM!ボタンをクリック。アカウントに手数料分の通貨（XYM）を補充し
+    緑色のNotificationとして”View transaction in explorer.”と表示されたらタブを閉じる
     `
   );
   console.log(
@@ -13,10 +14,9 @@ const main = () => {
     `
   );
   console.log(
-    `2. CLAIM後、緑色のNotificationとして”View transaction in explorer.”と表示されたらタブを閉じ
-    代わりに以下リンクを別タブで開き200XYMが入金されていることを確認する(このページは開いたままにしておく)
-    `
+    `2. 以下リンクを別タブで開き200XYMが入金されていることを確認する(このページは開いたままにしておく)`
   );
+  console.log('');
   console.log(
     `https://testnet.symbol.fyi/accounts/${account.address.plain()}
     `
