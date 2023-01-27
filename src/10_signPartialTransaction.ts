@@ -1,4 +1,4 @@
-//cosigner2より連署を行い9_TransferTransationFromMultisigでロックしたトランザクションを実行する
+//9_TransferTransationFromMultisigでロックしたトランザクションをcosigner2で連署を行い解除する
 
 import { firstValueFrom } from 'rxjs';
 import {
