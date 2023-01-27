@@ -1,29 +1,29 @@
 //0_GenerateAccount.tsから入力
 exports.accountPrivateKey =
-  '3C40DCC921E205EA51680B8D9EAF42FED324C6B6797B2531D7CCDBD57C213D9C';
+  'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
 exports.accountPublicKey =
-  '588B9C78CC3B53AE49E44A6460F064260D6EAF6EA9734E504196A6FF9BAB7CF2';
-exports.accountAddress = 'TAXHNPMACCZO2PNTNXFUBARZEHBQSAWTWETUNBY';
+  'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
+exports.accountAddress = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
 
 exports.cosigner1Key =
-  'F38CBAE5CBFE28E28E8B1902EB71833D9743CB2B632D30DBCE1E029D0F9AA450';
+  'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
 exports.cosigner2Key =
-  'FB266B0E9B4D17EF4B15403C398DDF0CBEF65B501F3DEF5ECF4A2C58CF38C6CB';
+  'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
 exports.cosigner3Key =
-  '24713E228BCBEF18E456F0CE075506A9B325E253551F4CF8E583C5293AD72B7A';
+  'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
 
-exports.cosigner1Address = 'TBM2MR2FWTWGLYHWG5OJGZNBISSJQMADHJNEFHI';
-exports.cosigner2Address = 'TCQHWQESOMXARLUSGCNEPQCLDEEHLCZIRGS55PQ';
-exports.cosigner3Address = 'TBDMNI3YMLA5DM2IS64575F4ZZLKJYVPFZMAZEA';
+exports.cosigner1Address = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
+exports.cosigner2Address = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
+exports.cosigner3Address = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
 
 //2_MosaicCreatetion.tsから入力
-exports.mosaicId = '1BE2A5387D906E6E';
-exports.namespaceName = 'ieiieiiei'; //あなたの名前をフルネーム小文字スペース無しで入力して下さい
+exports.mosaicId = 'xxxxxxxxxxxxxxxx';
+exports.namespaceName = 'YOURNAME'; //あなたの名前をフルネーム小文字スペース無しで入力して下さい
 
 //9_TransferTransationFromMultisig.tsから入力
 exports.targetTxHash =
-  '4A1CD396CAB383A7D2EBBE384C14B9E8E001C46A363B88D4026D8860CF4CAB3F';
+  'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
 
 //11_Escrow.tsから入力
 exports.targetTxHash2 =
-  '96DEF28DAF5B2AAE3B1DBA3913E29C0F0E337C43B56E1A077ACF6A78E1DEFDF0';
+  'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
