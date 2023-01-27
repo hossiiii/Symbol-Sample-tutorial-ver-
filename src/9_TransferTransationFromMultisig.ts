@@ -14,10 +14,10 @@ import {
   UInt64,
 } from 'symbol-sdk';
 
-const multisigAccountPublicKey =
-  'E7EB6BBE85CB31377E0024F4DEAAF84F6C5CFB8F27F129F98690C3D1A6097F3D';
-const cosignerPrivateKey =
-  'C6354623696897D24CAE41E89DAC832E7731DE98D61A1FD58B180CC0009FC4B0';
+const property = require('./Property.ts');
+const multisigAccountPublicKey = property.accountPublicKey;
+const cosignerPrivateKey = property.cosigner1Key;
+
 const targetAddress = 'TB5SUCCQIOISBCMTSYLYLGGAA3MIMYNC6KMRAHY';
 const node = 'https://sym-test-04.opening-line.jp:3001';
 const repoFactory = new RepositoryFactoryHttp(node);
