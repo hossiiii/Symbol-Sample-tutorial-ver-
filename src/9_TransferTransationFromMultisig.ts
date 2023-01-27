@@ -54,12 +54,23 @@ const main = async () => {
     Deadline.create(epochAdjustment),
     [transferTransaction.toAggregate(multisigPublicAccount)],
     networkType
-  ).setMaxFeeForAggregate(100, 2);
+  ).setMaxFeeForAggregate(100, 0);
 
   const signedTransaction = cosignerAccount.sign(
     aggregateTransaction,
     generationHash
   );
+
+  // const aggregateTransaction = AggregateTransaction.createBonded(
+  //   Deadline.create(epochAdjustment),
+  //   [transferTransaction.toAggregate(multisigPublicAccount)],
+  //   networkType
+  // ).setMaxFeeForAggregate(100, 2);
+
+  // const signedTransaction = cosignerAccount.sign(
+  //   aggregateTransaction,
+  //   generationHash
+  // );
 
   const duration = UInt64.fromUint(2 * 60 * 24 * 2);
 
