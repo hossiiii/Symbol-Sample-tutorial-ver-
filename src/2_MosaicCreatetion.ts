@@ -87,9 +87,9 @@ const main = async () => {
           `以下のMosaicIDを別ファイルの”Property.ts”に入力して保存する
         `
         );
-        const accountInfo = await accountHttp
-          .getAccountInfo(account.address)
-          .toPromise();
+        const accountInfo = await firstValueFrom(
+          accountHttp.getAccountInfo(account.address)
+        );
         accountInfo!.mosaics.forEach(async (mosaic) => {
           if (mosaic.id.toHex() != '72C0212E67A08BCE')
             console.log(mosaic.id.toHex());
